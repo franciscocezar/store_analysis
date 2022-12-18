@@ -228,11 +228,11 @@ class Billings:
 
         msg = email.message.EmailMessage()
         msg['Subject'] = f'Store Ratings {self.last_date.day}/{self.last_date.month}'
-        msg['From'] = 'cezarfrancisco63@gmail.com'
+        msg['From'] = '<e-mail>'
         msg['To'] = self.emails_df.loc[self.emails_df['Loja']=='Diretoria', 'E-mail'].values[0]
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(body)
-        password = 'fjmmgfjskhgeognq' 
+        password = '<password>' 
 
 
         mime_type, _ = mimetypes.guess_type('Days Ranking.csv')
