@@ -156,7 +156,7 @@ class Billings:
                 <p>Please find attached the spreadsheet with all the data for more details.</p>
 
                 <p>Yours sincerely</p>
-                <p>Francsico</p>
+                <p>Francisco</p>
                 """
 
             msg = email.message.EmailMessage()
@@ -223,7 +223,7 @@ class Billings:
         <p>Please find attached the year and day ratings of all stores.</p>
         <br>
         <p>Yours sincerely</p>
-        <p>Francsico</p>
+        <p>Francisco</p>
         """
 
         msg = email.message.EmailMessage()
