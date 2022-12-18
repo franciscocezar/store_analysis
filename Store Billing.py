@@ -29,11 +29,11 @@ class Billings:
 
         self.backup_path = Path('Stores Files Backup')
         self.folders_backup = self.backup_path.iterdir()
-        manager_names_list_backup = [folder.manager_name for folder in self.folders_backup]
+        names_list_backup = [folder.manager_name for folder in self.folders_backup]
 
         for store in self.dict_stores:
             # Checks if the folder does not exist and makes it.
-            if store not in manager_names_list_backup:
+            if store not in names_list_backup:
                 Path(self.backup_path/store).mkdir()
             
             file_manager_name = f'{self.last_date.day}_{self.last_date.month}_{store}.csv'
@@ -161,11 +161,11 @@ class Billings:
 
             msg = email.message.EmailMessage()
             msg['Subject'] = f'OnePage of the Day {self.last_date.day}/{self.last_date.month} - Loja {store}'
-            msg['From'] = 'cezarfrancisco63@gmail.com'
+            msg['From'] = '<e-mail>'
             msg['To'] = self.emails_df.loc[self.emails_df['Loja']==store, 'E-mail'].values[0]
             msg.add_header('Content-Type', 'text/html')
             msg.set_payload(body)
-            password = 'fjmmgfjskhgeognq'
+            password = '<password>'
 
             mime_type, _ = mimetypes.guess_type(f'{store}.csv')
             mime_type, mime_subtype = mime_type.split('/')
